@@ -2,6 +2,7 @@
 body{
     padding: 0%;
     margin: 0%;
+    overflow-x: hidden;
 }
 .header_appbar{
     width: 100vw;
@@ -44,6 +45,11 @@ body{
     padding: 12px;
     margin: 10px;
     border-radius: 7px;
+    transition: 0.2s ease-in;
+}
+
+.card_body:hover{
+    margin-top: -1px;
 }
 
 a:hover, a:visited, a:link, a:active
