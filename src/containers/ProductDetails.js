@@ -3,10 +3,10 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"
 import { selectedProduct, removeSelectedProduct } from "../redux/actions/productAction";
+import Header from "./Header";
 
 export function ProductDetails(){
     const product = useSelector((state) => state.product)
-    console.log(product)
     const {title, image, price, category, description} = product
     const { productId } = useParams();
     const dispatch = useDispatch();
@@ -28,8 +28,8 @@ export function ProductDetails(){
             dispatch(removeSelectedProduct());
         }
     }, [productId])
-    return<>
-            {Object.keys(product).length === 0 ? <div>Loading...</div> : 
+    return<Header>
+            {Object.keys(product).length === 0 ? <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>: 
             <div className="container details_section flex-center"> 
             <div className="details_container flex-center">
             <div className="details_image flex-center"> <img src={image} alt={title} /> </div>
@@ -46,5 +46,5 @@ export function ProductDetails(){
             </div>
             </div>
             </div>}
-          </>
+          </Header>
 }

@@ -1,11 +1,17 @@
+import { Link } from "react-router-dom";
+import shopify from '../assets/Shopify.png'
+const Header = ({ children }) => {
 
-const Header = () => {
-
-    return<div className="header_appbar box-shadow-1">
+    return<>
+    <div className="header_appbar box-shadow-1">
             <div className="container">
-                <h2 href='/'>Shopify</h2>
+                <Link to={`/`} >
+                    <img width={100} src={shopify} alt='tag' />
+                </Link>
             </div>
           </div>
+            { children }
+            </>
 }
 
 export default Header;

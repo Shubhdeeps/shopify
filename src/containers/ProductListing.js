@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { ProductComponent } from "./ProductComponent";
 import axios from "axios";
 import { setProducts } from '../redux/actions/productAction'
+import Header from "./Header";
 
 export function ProductListing(){
     const dispatch = useDispatch();
@@ -22,7 +23,9 @@ export function ProductListing(){
         fetchProducts();
     }, []);
 
-    return<div>
+
+    return<Header>
+            {Object.keys(products.allProducts.products).length === 0 && <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>}
               <ProductComponent />
-          </div>
+          </Header>
 }
