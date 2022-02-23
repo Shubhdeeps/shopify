@@ -6,7 +6,7 @@ export function ProductComponent(){
     const renderList = products.map(product => {
         const {id, title, image, price, category} = product;
         return(
-               <Link to={`/product/${id}`} key={id}>
+               <Link to={`/shopify/product/${id}`} key={id}>
                 <div className="card_body" >
                     <div className="card_image"> <img src={image} alt={title} /> </div>
                     <div className="card_title">{title}</div>
@@ -17,7 +17,7 @@ export function ProductComponent(){
         );
     })
 
-    return<div className="container flex-wrap">
+    return<div className="container flex-wrap mt-header">
               {renderList}
           </div>
 }

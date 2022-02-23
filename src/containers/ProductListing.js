@@ -24,8 +24,8 @@ export function ProductListing(){
     }, []);
 
 
-    return<Header>
+    return<>
             {Object.keys(products.allProducts.products).length === 0 && <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>}
               <ProductComponent />
-          </Header>
+          </>
 }
